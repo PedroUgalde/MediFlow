@@ -1,0 +1,112 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&family=Plus+Jakarta+Sans:wght@500;600;700;800&display=swap');
+
+@layer base {
+  :root {
+    --background: 210 20% 98%;
+    --foreground: 210 40% 11%;
+
+    --card: 0 0% 100%;
+    --card-foreground: 210 40% 11%;
+
+    --popover: 0 0% 100%;
+    --popover-foreground: 210 40% 11%;
+
+    --primary: 168 72% 36%;
+    --primary-foreground: 0 0% 100%;
+
+    --secondary: 210 60% 50%;
+    --secondary-foreground: 0 0% 100%;
+
+    --muted: 210 20% 95%;
+    --muted-foreground: 210 15% 46%;
+
+    --accent: 168 40% 94%;
+    --accent-foreground: 168 72% 26%;
+
+    --destructive: 0 72% 51%;
+    --destructive-foreground: 0 0% 100%;
+
+    --border: 210 20% 90%;
+    --input: 210 20% 90%;
+    --ring: 168 72% 36%;
+
+    --radius: 0.75rem;
+
+    /* Clinical urgency colors */
+    --urgency-ontime: 152 60% 46%;
+    --urgency-low: 48 96% 53%;
+    --urgency-medium: 36 100% 50%;
+    --urgency-high: 16 90% 50%;
+    --urgency-critical: 0 72% 51%;
+
+    /* Heat map scale */
+    --heat-1: 168 50% 95%;
+    --heat-2: 168 55% 82%;
+    --heat-3: 168 60% 65%;
+    --heat-4: 168 65% 48%;
+    --heat-5: 168 72% 36%;
+    --heat-6: 168 75% 28%;
+    --heat-7: 168 80% 20%;
+
+    /* Gradients */
+    --gradient-clinical: linear-gradient(135deg, hsl(168, 72%, 36%), hsl(210, 60%, 50%));
+    --gradient-card: linear-gradient(180deg, hsl(0, 0%, 100%) 0%, hsl(210, 20%, 98%) 100%);
+
+    /* Shadows */
+    --shadow-card: 0 1px 3px 0 hsl(210 20% 50% / 0.08), 0 1px 2px -1px hsl(210 20% 50% / 0.08);
+    --shadow-card-hover: 0 4px 12px 0 hsl(210 20% 50% / 0.12), 0 2px 4px -2px hsl(210 20% 50% / 0.08);
+    --shadow-elevated: 0 10px 30px -8px hsl(168 72% 36% / 0.15);
+
+    --sidebar-background: 0 0% 100%;
+    --sidebar-foreground: 210 40% 11%;
+    --sidebar-primary: 168 72% 36%;
+    --sidebar-primary-foreground: 0 0% 100%;
+    --sidebar-accent: 168 40% 94%;
+    --sidebar-accent-foreground: 168 72% 26%;
+    --sidebar-border: 210 20% 92%;
+    --sidebar-ring: 168 72% 36%;
+  }
+}
+
+@layer base {
+  * {
+    @apply border-border;
+  }
+
+  body {
+    @apply bg-background text-foreground font-sans antialiased;
+    font-family: 'Inter', sans-serif;
+  }
+
+  h1, h2, h3, h4 {
+    font-family: 'Plus Jakarta Sans', sans-serif;
+  }
+}
+
+@layer utilities {
+  .gradient-clinical {
+    background: var(--gradient-clinical);
+  }
+
+  .shadow-card {
+    box-shadow: var(--shadow-card);
+  }
+
+  .shadow-card-hover {
+    box-shadow: var(--shadow-card-hover);
+  }
+
+  .shadow-elevated {
+    box-shadow: var(--shadow-elevated);
+  }
+
+  .urgency-ontime { background-color: hsl(var(--urgency-ontime)); }
+  .urgency-low { background-color: hsl(var(--urgency-low)); }
+  .urgency-medium { background-color: hsl(var(--urgency-medium)); }
+  .urgency-high { background-color: hsl(var(--urgency-high)); }
+  .urgency-critical { background-color: hsl(var(--urgency-critical)); }
+}
